@@ -1,4 +1,4 @@
-from backend.config import get_settings
+from config import get_settings
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
