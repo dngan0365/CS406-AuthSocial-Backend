@@ -1,3 +1,13 @@
+---
+title: Social Media API with AI Detection
+emoji: 🤖
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+pinned: false
+app_port: 7860
+---
+
 # Social Media API with AI Detection
 
 Backend API cho nền tảng mạng xã hội với tính năng phát hiện nội dung AI-generated.
