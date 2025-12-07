@@ -1,0 +1,5 @@
+.venv/
+.env
+ml_models/best_model.pth
+ml_models/backbone/dino_vitb14.pth
+*.pth
