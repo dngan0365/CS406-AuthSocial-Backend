@@ -17,6 +17,9 @@ class Settings(BaseSettings):
     model_path: str = "ml_models/best_model.pth"
     device: str = "cpu"
     
+    # Frontend URL
+    frontend_url: str = "http://localhost:3000"
+    
     class Config:
         env_file = ".env"
 

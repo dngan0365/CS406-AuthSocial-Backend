@@ -1,3 +1,4 @@
+from backend.config import get_settings
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -46,7 +47,7 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Trong production, chỉ định domain cụ thể
+    allow_origins=[get_settings().frontend_url, "http://localhost:3000"],  # Trong production, chỉ định domain cụ thể
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
