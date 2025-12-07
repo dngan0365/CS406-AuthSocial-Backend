@@ -5,6 +5,7 @@ from collections import OrderedDict
 from PIL import Image
 import io
 import os
+from huggingface_hub import hf_hub_download
 from typing import Tuple
 
 # -------------------------------
@@ -95,7 +96,11 @@ class AIDetector:
         ]))
 
         # Load head weights
-        state_dict = torch.load(model_path, map_location=self.device)
+        head_path = hf_hub_download(
+            repo_id="dngan0365/dinov2-finetune",
+            filename="best_model.pth",
+        )
+        state_dict = torch.load(head_path, map_location=self.device)
         model.load_state_dict(state_dict, strict=False)
 
         model.eval()
