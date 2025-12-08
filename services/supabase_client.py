@@ -29,7 +29,7 @@ def get_supabase_client(token: str = None) -> Client:
     # Tạo client mới mỗi lần để tránh cache token cũ
     client = create_client(
         settings.supabase_url,
-        settings.supabase_anon_key
+        settings.supabase_service_role_key
     )
     
     if token:
