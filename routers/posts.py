@@ -203,13 +203,6 @@ async def get_posts(
     supabase: Client = Depends(get_supabase_client)
 ):
     """Lấy danh sách posts"""
-    
-    # 🔍 DEBUG: Log đầu vào
-    # logging.info(f"=== GET POSTS DEBUG ===")
-    # logging.info(f"owner_id: {owner_id}")
-    # logging.info(f"current_user.id: {current_user.id if current_user else 'None'}")
-    # logging.info(f"Is viewing own profile: {current_user and owner_id == current_user.id}")
-    
     query = supabase.table("posts").select("*")
     
     if owner_id:
